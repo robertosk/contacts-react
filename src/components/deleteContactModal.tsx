@@ -14,6 +14,7 @@ export interface IProps {
   modalStatus: boolean;
   contact: IContact;
   removeContact: (c: IContact) => void;
+  onClose: () => void;
 }
 
 export interface IState {
@@ -77,6 +78,7 @@ class DeleteContactModal extends React.Component<IProps, IState> {
   };
   handleColse = () => {
     this.setState({ modalStatus: false });
+    this.props.onClose();
   };
 }
 

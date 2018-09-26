@@ -14,6 +14,7 @@ export interface IProps {
   modalStatus: boolean;
   contact: IContact;
   saveContact: (c: IContact) => void;
+  onClose: () => void;
 }
 
 export interface IState {
@@ -29,6 +30,7 @@ class EditContactModal extends React.Component<IProps, IState> {
 
   handleColse = () => {
     this.setState({ modalStatus: false });
+    this.props.onClose();
   };
   handleChange = (e: any) => {
     const contact: IContact = this.state.contact;
